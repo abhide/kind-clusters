@@ -1,5 +1,7 @@
-init-cluster01:
-	kind create cluster --config=cluster01.yaml --name=cluster01 --wait=300s
+CLUSTER=cluster01
 
-clean-cluster01:
-	kind delete cluster --name=cluster01
+init:
+	kind create cluster --config=${CLUSTER}.yaml --name=${CLUSTER} --wait=300s
+
+clean:
+	kind delete cluster --name=${CLUSTER}
